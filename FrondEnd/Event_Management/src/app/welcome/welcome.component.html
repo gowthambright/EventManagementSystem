@@ -1,0 +1,181 @@
+<div class="wel">
+    <h1>
+        <b>Welcome Users !.....</b>
+    </h1>
+</div>
+<br>
+<div>
+    <table class="tab" border="10">
+        <thead>
+            <tr>
+                <th> Id </th>
+                <th> First Name </th>
+                <th> Last Name </th>
+                <th> Age </th>
+                <th> Gender </th>
+                <th> Date of Birth </th>
+                <th> Email </th>
+                <th> Password </th>
+                <th> Address Line 1 </th>
+                <th> Address Line 2 </th>
+                <th> City </th>
+                <th> District </th>
+                <th> Pincode </th>
+                <th> State </th>
+                <th> Phone Number </th>
+                <th> Edit Action </th>
+                <th> Delete Action </th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let detail of allUsers">
+            <tr>
+                <td>{{detail.id}}</td>
+                <td>{{detail.firstName}}</td>
+                <td>{{detail.lastName}}</td>
+                <td>{{detail.age}}</td>
+                <td>{{detail.gender}}</td>
+                <td>{{detail.dateOfBirth}}</td>
+                <td>{{detail.email}}</td>
+                <td>{{detail.password}}</td>
+                <td>{{detail.addressLine1}}</td>
+                <td>{{detail.addressLine2}}</td>
+                <td>{{detail.city}}</td>
+                <td>{{detail.district}}</td>
+                <td>{{detail.pincode}}</td>
+                <td>{{detail.state}}</td>
+                <td>{{detail.phoneNumber}}</td>
+                <td>
+                    <button (click)="getAllDetail(detail.id)" type="button" class="btn btn-primary"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Edit
+                    </button>
+                    <button (click)="delete(detail.id)" type="button" class="btn btn-primary"><i>Delete</i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <h1 class="modal-title fs-5" id="exampleModalLabel">Update Details</h1> -->
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                <div class="modal-body">
+                    <div class="card m-3">
+                        <div class="card-body">
+                            <form [formGroup]="popUpForm">
+
+                                <div class="form-row">
+                                    <div class="form-group col-5">
+                                        <label>Id</label>
+                                        <input type="text" formControlName="id" class="form-control" readonly />
+                                    </div>
+                                    <div class="form-group col-5">
+                                        <label>First Name</label>
+                                        <input type="text" formControlName="firstName" class="form-control" />
+                                    </div>
+                                    <div class="form-group col-5">
+                                        <label>Last Name</label>
+                                        <input type="text" formControlName="lastName" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group col-5">
+                                    <label>Age</label>
+                                    <input type="text" formControlName="age" class="form-control"/>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form">
+                                        <label class="form-label">Gender</label>
+                                        <br><br>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" formControlName="gender"
+                                                value="female"/>
+                                            <label for="female">Female</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" formControlName="gender"
+                                                value="male"/>
+                                            <label for="male">Male</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <div class="form">
+                                        <label>Date Of Birth</label>
+                                        <input type="date" class="form-control" formControlName="dateOfBirth"/>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <label>Email</label>
+                                        <input type="email" formControlName="email" class="form-control" />
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col">
+                                            <label>Password</label>
+                                            <input type="password" formControlName="password" class="form-control"/>
+                                        </div>
+                                        <div class="form-group col">
+                                            <label>Confirm Password</label>
+                                            <input type="password" formControlName="confirmPassword"
+                                                class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4 pb-2">
+                                        <div class="form">
+                                            <div class="form-group green-border-focus">
+                                                <label for="exampleFormControlTextarea5">Address Line 1</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea5"
+                                                    formControlName="addressLine1" rows="3" cols="30"
+                                                    placeholder="Enter Your Address..."></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4 pb-2">
+                                        <div class="form">
+                                            <div class="form-group shadow-textarea">
+                                                <label for="exampleFormControlTextarea6">Address Line 2</label>
+                                                <textarea class="form-control z-depth-1"
+                                                    id="exampleFormControlTextarea6" formControlName="addressLine2"
+                                                    rows="3" placeholder="Enter Your Address..."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4 pb-2">
+                                            <div class="form">
+                                                <label>City</label>
+                                                <input type="text" formControlName="city" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4 pb-2">
+                                            <div class="form">
+                                                <label>District</label>
+                                                <input type="text" formControlName="district" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4 pb-2">
+                                            <div class="col-md-6 mb-4 pb-2"> ​
+                                                <div class="form">
+                                                    <label>Pincode</label>
+                                                    <input type="text" formControlName="pincode" class="form-control"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4 pb-2">
+                                                <div class="form">
+                                                    <label>State</label>
+                                                    <input type="text" formControlName="state" class="form-control"/>
+                                                </div>
+                                            </div>
+                                            <div class="form">
+                                                <label>Phone Number </label>
+                                                <input type="tel" formControlName="phoneNumber" class="form-control"
+                                                    value="phone" />
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary" (click)="update()">Save
+                                                Changes</button>
+                                        </div>

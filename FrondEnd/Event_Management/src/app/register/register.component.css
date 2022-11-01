@@ -1,0 +1,12 @@
+.form{
+    text-align: center;
+}
+
+.form mat-form-field{
+    width: 40%;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+

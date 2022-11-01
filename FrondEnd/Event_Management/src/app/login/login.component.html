@@ -1,0 +1,20 @@
+<h1 class="head"><b>Login Form</b></h1>
+<div class="logDesign">
+    <form [formGroup]="loginSection" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+            <mat-label>Enter Your Email</mat-label>
+            <input matInput type="text" formControlName="email">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter Your Password</mat-label>
+            <input matInput type="password" formControlName="password">
+        </mat-form-field>
+        <br>
+        <button mat-flat-button color="primary" type="submit">Login</button>
+        <br>
+    </form>
+    <div>
+        <span>New User</span> <a href="/register"><button mat-button>Register</button></a>
+    </div>
+</div>

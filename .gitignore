@@ -1,0 +1,41 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/FrondEnd/Event_Management/node_modules
+/FrondEnd/Event_Management/.pnp
+/FrondEnd/Event_Management/.pnp.js
+
+# testing
+/FrondEnd/Event_Management/coverage
+/coverage
+# production
+/FrondEnd/Event_Management/build
+
+# misc
+/FrondEnd/Event_Management/.DS_Store
+/FrondEnd/Event_Management/.env.local
+/FrondEnd/Event_Management/.env.development.local
+/FrondEnd/Event_Management/.env.test.local
+/FrondEnd/Event_Management/.env.production.local
+/FrondEnd/Event_Management/.vscode
+/FrondEnd/Event_Management/.angular
+
+
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+/FrondEnd/Event_Management/npm-debug.log*
+/FrondEnd/Event_Management/yarn-debug.log*
+/FrondEnd/Event_Management/yarn-error.log*
+
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+
